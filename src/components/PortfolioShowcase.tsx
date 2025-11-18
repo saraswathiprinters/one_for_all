@@ -65,7 +65,7 @@ const PortfolioShowcase: React.FC = () => {
         "Creative Content Production"
       ],
       image: ads,
-      liveUrl: "https://chandraaads.com",
+      liveUrl: "https://chandraadsevents.vercel.app/",
       status: "Live",
       role: "Advertising Solutions Provider"
     },
@@ -84,7 +84,7 @@ const PortfolioShowcase: React.FC = () => {
         "End-to-End Event Execution"
       ],
       image: events,
-      liveUrl: "https://chandraevent.com",
+      liveUrl: "https://chandraaevents.netlify.app/",
       status: "Live",
       role: "Event Management Specialist"
     },
@@ -103,7 +103,7 @@ const PortfolioShowcase: React.FC = () => {
         "Custom Print Projects"
       ],
       image: sarawathi,
-      liveUrl: "https://sarawathiprinters.com",
+      liveUrl: "https://saraswathiprinters.netlify.app/",
       status: "Live",
       role: "Printing Services Provider"
     },
@@ -122,7 +122,7 @@ const PortfolioShowcase: React.FC = () => {
         "Brand Consistency Solutions"
       ],
       image: concept,
-      liveUrl: "https://chandraconcept.com",
+      liveUrl: "https://chandraconcept.vercel.app/",
       status: "Live",
       role: "Branding & Printing Specialist"
     }
