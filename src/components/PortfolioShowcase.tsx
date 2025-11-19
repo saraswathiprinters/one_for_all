@@ -8,6 +8,10 @@ import concept from '../asstets/chandraconcept.png';
 import ads from '../asstets/chandraads.png';
 import sarawathi from '../asstets/saraswathiprinters.png';
 import mediaweb6 from '../asstets/mediaweb6.png';
+import cityExpress from '../asstets/cityxpress.png';
+import sthreeFashion from '../asstets/sthree.png';
+import bananaExports from '../asstets/banana.png';
+import chandraSignage from '../asstets/singnate.png';
 
 interface Website {
   id: number;
@@ -20,7 +24,29 @@ interface Website {
   liveUrl: string;
   status: 'Live' | 'Development';
   role: string;
+
+  // Add this 👇
+  additionalInfo?: {
+    services?: string[];
+    industriesServed?: string[];
+    certifications?: string[];
+    markets?: string[];
+    productCategories?: string[];
+    newsCategories?: string[];
+    contact?: {
+      email?: string;
+      phone?: string;
+      address?: string;
+    };
+    stats?: {
+      brandRecallIncrease?: string;
+      satisfiedClients?: string;
+      customerSatisfaction?: string;
+      countriesServed?: string;
+    };
+  };
 }
+
 
 const PortfolioShowcase: React.FC = () => {
   const [ref, inView] = useInView({
@@ -31,102 +57,271 @@ const PortfolioShowcase: React.FC = () => {
   const [selectedWebsite, setSelectedWebsite] = useState<Website | null>(null);
 
   const websites: Website[] = [
-    {
-      id: 1,
-      title: "Media Web 6",
-      description: "Creative website, app, and desktop application development",
-      longDescription: "A comprehensive digital solutions agency specializing in creating innovative websites, mobile applications, and desktop software. We transform ideas into powerful digital experiences with cutting-edge technology and creative design approaches.",
-      category: "Development",
-      features: [
-        "Custom Website Development",
-        "Mobile App Creation",
-        "Desktop Applications",
-        "UI/UX Design",
-        "Digital Strategy Consulting",
-        "Ongoing Maintenance & Support"
+  {
+    id: 1,
+    title: "Media Web 6",
+    description: "Creative website, app, and desktop application development",
+    longDescription: "A comprehensive digital solutions agency specializing in creating innovative websites, mobile applications, and desktop software. We transform ideas into powerful digital experiences with cutting-edge technology and creative design approaches.",
+    category: "Development",
+    features: [
+      "Custom Website Development",
+      "Mobile App Creation",
+      "Desktop Applications",
+      "UI/UX Design",
+      "Digital Strategy Consulting",
+      "Ongoing Maintenance & Support"
+    ],
+    image: mediaweb6,
+    liveUrl: "https://mediaweb6.com/",
+    status: "Live",
+    role: "Digital Solutions Provider"
+  },
+  {
+    id: 2,
+    title: "Chandraa Ads",
+    description: "All your advertising needs under one roof—delivered seamlessly across multiple channels",
+    longDescription: "A full-service advertising agency that consolidates all your marketing needs into one seamless experience. We deliver comprehensive advertising solutions across digital and traditional channels, ensuring consistent brand messaging and maximum reach for your business.",
+    category: "Advertising",
+    features: [
+      "Multi-Channel Advertising",
+      "Digital Marketing Campaigns",
+      "Social Media Management",
+      "Brand Strategy Development",
+      "Performance Analytics",
+      "Creative Content Production"
+    ],
+    image: ads,
+    liveUrl: "https://chandraaads.com/",
+    status: "Live",
+    role: "Advertising Solutions Provider"
+  },
+  {
+    id: 3,
+    title: "Chandraa Event",
+    description: "Crafting memorable events with attention to every detail for seamless and unforgettable experiences",
+    longDescription: "An elite event management company dedicated to creating extraordinary experiences. From corporate gatherings to personal celebrations, we handle every detail with precision and creativity, ensuring each event tells your unique story and leaves lasting impressions.",
+    category: "Events",
+    features: [
+      "Corporate Event Planning",
+      "Wedding & Celebration Management",
+      "Venue Selection & Decoration",
+      "Entertainment Coordination",
+      "Guest Experience Management",
+      "End-to-End Event Execution"
+    ],
+    image: events,
+    liveUrl: "https://chandraaevents.com/",
+    status: "Live",
+    role: "Event Management Specialist"
+  },
+  {
+    id: 4,
+    title: "Saraswathi Printers",
+    description: "Professional printing solutions with unmatched quality and reliability for over a decade",
+    longDescription: "A trusted printing partner with over ten years of excellence in delivering premium printing services. We specialize in high-quality commercial printing, packaging solutions, and custom print projects for businesses of all sizes, maintaining the highest standards of quality and customer service.",
+    category: "Printing",
+    features: [
+      "Commercial Printing Services",
+      "Packaging Solutions",
+      "Business Stationery",
+      "Marketing Materials",
+      "Large Format Printing",
+      "Custom Print Projects"
+    ],
+    image: sarawathi,
+    liveUrl: "https://saraswathiprinters.com/",
+    status: "Live",
+    role: "Printing Services Provider"
+  },
+  {
+    id: 5,
+    title: "Chandraa Concept",
+    description: "Premium printing service specializing in business stationery, ID cards, and custom branding solutions",
+    longDescription: "A specialized printing service provider focused on corporate identity and branding solutions. We excel in creating professional business stationery, secure ID cards, promotional products, and comprehensive branding packages that help businesses establish and maintain a strong market presence.",
+    category: "Branding",
+    features: [
+      "Business Stationery Design",
+      "ID Card Production",
+      "Promotional Products",
+      "Corporate Branding Packages",
+      "Logo & Identity Design",
+      "Brand Consistency Solutions"
+    ],
+    image: concept,
+    liveUrl: "https://chandraaconcepts.com/",
+    status: "Live",
+    role: "Branding & Printing Specialist"
+  },
+  {
+    id: 6,
+    title: "Chandra Digital Signage",
+    description: "Transform your space with innovative digital signage solutions that engage, inform, and inspire",
+    longDescription: "A comprehensive digital signage solutions provider specializing in cutting-edge display technology for businesses across various industries. We deliver end-to-end digital signage solutions including cloud management, 4K displays, interactive kiosks, and custom advertising displays that revolutionize customer engagement and brand communication.",
+    category: "Digital Signage",
+    features: [
+      "Cloud-Based Management Platform",
+      "4K Ultra HD Display Solutions",
+      "Interactive Touchscreen Kiosks",
+      "Smart Content Scheduling",
+      "Real-time Content Updates",
+      "Multi-location Display Management",
+      "Custom Advertising Solutions",
+      "24/7 Technical Support"
+    ],
+    image: chandraSignage, // Make sure to import this image
+    liveUrl: "https://chandraadigitalsignage.com/",
+    status: "Live",
+    role: "Digital Signage Solutions Provider",
+    additionalInfo: {
+      services: [
+        "Sunback Sheets - Outdoor advertising displays",
+        "Standee Models - Custom free-standing displays",
+        "In-Shop Displays - Retail visibility solutions",
+        "Custom Display Racks - Tailored merchandising",
+        "Promotional Canopies - Branded shade solutions",
+        "Advertising Kiosks - Standalone promotional units",
+        "Printed Advertising Umbrellas - Mobile branding",
+        "Helium Promotional Balloons - Aerial visibility",
+        "Party Decorations - Themed installations",
+        "Promotional Stalls - Exhibition solutions",
+        "Vehicle Road Shows - Mobile advertising",
+        "Wall & Floor Branding - Custom installations"
       ],
-      image: mediaweb6,
-      liveUrl: "https://mediaweb6.com/",
-      status: "Live",
-      role: "Digital Solutions Provider"
-    },
-    {
-      id: 2,
-      title: "Chandraa Ads",
-      description: "All your advertising needs under one roof—delivered seamlessly across multiple channels",
-      longDescription: "A full-service advertising agency that consolidates all your marketing needs into one seamless experience. We deliver comprehensive advertising solutions across digital and traditional channels, ensuring consistent brand messaging and maximum reach for your business.",
-      category: "Advertising",
-      features: [
-        "Multi-Channel Advertising",
-        "Digital Marketing Campaigns",
-        "Social Media Management",
-        "Brand Strategy Development",
-        "Performance Analytics",
-        "Creative Content Production"
+      industriesServed: [
+        "Retail",
+        "Corporate",
+        "Healthcare", 
+        "Education",
+        "Transportation",
+        "Commercial",
+        "Hospitality"
       ],
-      image: ads,
-      liveUrl: "https://chandraadsevents.vercel.app/",
-      status: "Live",
-      role: "Advertising Solutions Provider"
-    },
-    {
-      id: 3,
-      title: "Chandraa Event",
-      description: "Crafting memorable events with attention to every detail for seamless and unforgettable experiences",
-      longDescription: "An elite event management company dedicated to creating extraordinary experiences. From corporate gatherings to personal celebrations, we handle every detail with precision and creativity, ensuring each event tells your unique story and leaves lasting impressions.",
-      category: "Events",
-      features: [
-        "Corporate Event Planning",
-        "Wedding & Celebration Management",
-        "Venue Selection & Decoration",
-        "Entertainment Coordination",
-        "Guest Experience Management",
-        "End-to-End Event Execution"
-      ],
-      image: events,
-      liveUrl: "https://chandraaevents.netlify.app/",
-      status: "Live",
-      role: "Event Management Specialist"
-    },
-    {
-      id: 4,
-      title: "Saraswathi Printers",
-      description: "Professional printing solutions with unmatched quality and reliability for over a decade",
-      longDescription: "A trusted printing partner with over ten years of excellence in delivering premium printing services. We specialize in high-quality commercial printing, packaging solutions, and custom print projects for businesses of all sizes, maintaining the highest standards of quality and customer service.",
-      category: "Printing",
-      features: [
-        "Commercial Printing Services",
-        "Packaging Solutions",
-        "Business Stationery",
-        "Marketing Materials",
-        "Large Format Printing",
-        "Custom Print Projects"
-      ],
-      image: sarawathi,
-      liveUrl: "https://saraswathiprinters.netlify.app/",
-      status: "Live",
-      role: "Printing Services Provider"
-    },
-    {
-      id: 5,
-      title: "Chandraa Concept",
-      description: "Premium printing service specializing in business stationery, ID cards, and custom branding solutions",
-      longDescription: "A specialized printing service provider focused on corporate identity and branding solutions. We excel in creating professional business stationery, secure ID cards, promotional products, and comprehensive branding packages that help businesses establish and maintain a strong market presence.",
-      category: "Branding",
-      features: [
-        "Business Stationery Design",
-        "ID Card Production",
-        "Promotional Products",
-        "Corporate Branding Packages",
-        "Logo & Identity Design",
-        "Brand Consistency Solutions"
-      ],
-      image: concept,
-      liveUrl: "https://chandraconcept.vercel.app/",
-      status: "Live",
-      role: "Branding & Printing Specialist"
+      contact: {
+        email: "chandraadigitalsignage@gmail.com",
+        phone: "+91 95852 72027",
+        address: "Coimbatore, Tamil Nadu"
+      },
+      stats: {
+        brandRecallIncrease: "78%",
+        satisfiedClients: "50+",
+        customerSatisfaction: "98%",
+        countriesServed: "5+"
+      }
     }
-  ];
+  },
+  {
+    id: 7,
+    title: "Banana Milk Exports",
+    description: "Premium banana powder manufacturer and exporter serving global markets with certified quality standards",
+    longDescription: "A leading manufacturer and global exporter of premium banana powder with ISO 22000, HACCP, and GMP certifications. We serve 50+ countries with high-quality, preservative-free banana powder for food, pharmaceutical, and cosmetic industries, ensuring consistent quality and reliable supply chain.",
+    category: "Export & Manufacturing",
+    features: [
+      "ISO 22000 Certified Manufacturing",
+      "100% Natural & Preservative-Free",
+      "Custom Mesh Size (40-120)",
+      "Bulk Export Packaging",
+      "Global Quality Standards",
+      "Dedicated Account Management"
+    ],
+    image: bananaExports, // Make sure to import this image
+    liveUrl: "https://bananamikexport.netlify.app/",
+    status: "Live",
+    role: "Banana Powder Manufacturer & Exporter",
+    additionalInfo: {
+      certifications: [
+        "ISO 22000:2018",
+        "HACCP Certified",
+        "GMP Compliant", 
+        "FSSAI Approved",
+        "USFDA Registered",
+        "EU Compliant"
+      ],
+      markets: [
+        "Baby Food Manufacturers",
+        "Bakery & Confectionery",
+        "Beverage Industry",
+        "Nutraceuticals",
+        "Cosmetics & Personal Care",
+        "Industrial Food Processing"
+      ],
+      contact: {
+        email: "exports@bananamilk.com",
+        phone: "+91 98765 43210",
+        address: "Export Processing Zone, Industrial Area, India 560001"
+      }
+    }
+  },
+  {
+    id: 8,
+    title: "SthRee Fashion",
+    description: "Discover the finest collection of traditional and contemporary Indian clothing",
+    longDescription: "An exclusive online fashion destination offering premium traditional Indian wear including sarees, salwars, kurtis, and accessories. We bring you carefully curated collections that blend traditional craftsmanship with contemporary designs, delivered with exceptional customer service.",
+    category: "E-commerce Fashion",
+    features: [
+      "Premium Saree Collections",
+      "Traditional & Contemporary Designs",
+      "Size Guide & Fit Assistance",
+      "Secure Online Shopping",
+      "Nationwide Delivery",
+      "Customer-Centric Returns Policy"
+    ],
+    image: sthreeFashion, // Make sure to import this image
+    liveUrl: "https://sthree.co.in/",
+    status: "Live",
+    role: "Online Fashion Retailer",
+    additionalInfo: {
+      productCategories: [
+        "Sarees",
+        "Salwar",
+        "Kurti & Tops", 
+        "Kids Wear",
+        "New Born Collection",
+        "Home Wear",
+        "Accessories",
+        "Mens Collection"
+      ],
+      contact: {
+        email: "sthreetrendz2025@gmail.com",
+        phone: "+91 89032 84455",
+        address: "65, Tatabad 1st Street, Coimbatore - 641 012"
+      }
+    }
+  },
+  {
+    id: 9,
+    title: "Vanakkam City Xpress",
+    description: "நம்பிக்கையுடன் வாசிக்கப்படும் தமிழ் செய்தி தளம் - Trusted Tamil News Platform",
+    longDescription: "A comprehensive Tamil news platform delivering reliable and timely news coverage across politics, world affairs, sports, cinema, technology, and more. We are committed to providing accurate, unbiased news reporting in Tamil language, serving the global Tamil-speaking community.",
+    category: "News & Media",
+    features: [
+      "Comprehensive News Coverage",
+      "Real-time News Updates",
+      "Multi-category Content",
+      "Tamil Language Focus",
+      "Mobile-Optimized Platform",
+      "Regular Content Updates"
+    ],
+    image: cityExpress, // Make sure to import this image
+    liveUrl: "https://vanakamcityxpress.com/",
+    status: "Live",
+    role: "Tamil News Portal",
+    additionalInfo: {
+      newsCategories: [
+        "மாநில செய்திகள் - State News",
+        "தேசிய செய்திகள் - National News", 
+        "உலக செய்திகள் - World News",
+        "விளையாட்டு செய்திகள் - Sports News",
+        "சினிமா - Cinema",
+        "தொழில்நுட்பம் - Technology"
+      ],
+      contact: {
+        email: "contact@cityexpress.in",
+        phone: "+91 98765 43210",
+        address: "Chennai, Tamil Nadu"
+      }
+    }
+  }
+];
 
   const containerVariants = {
     hidden: { opacity: 0 },
