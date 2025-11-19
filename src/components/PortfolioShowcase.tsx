@@ -151,8 +151,8 @@ const PortfolioShowcase: React.FC = () => {
   };
 
   return (
-    <section id="portfolio" className="py-20 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-professional-blue/10 to-transparent z-0" />
+    <section id="portfolio" className="py-20 relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-yellow-100">
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-yellow-200/20 to-transparent z-0" />
       
       <motion.div
         ref={ref}
@@ -166,10 +166,10 @@ const PortfolioShowcase: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-poppins">
-            <span className="text-white">Our</span>{' '}
-            <span className="text-gradient">Businesses</span>
+            <span className="text-gray-800">Our</span>{' '}
+            <span className="text-yellow-600">Businesses</span>
           </h2>
-          <p className="text-xl text-professional-gray max-w-2xl mx-auto font-inter">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter">
             Explore our diverse portfolio of professional services and business ventures.
           </p>
         </motion.div>
@@ -188,37 +188,37 @@ const PortfolioShowcase: React.FC = () => {
                 y: -5,
                 transition: { duration: 0.3 }
               }}
-              className="group relative bg-gradient-to-br from-white/5 to-white/2 rounded-2xl overflow-hidden border border-white/10 hover:border-professional-light-blue/30 transition-all duration-500 card-gradient backdrop-blur-sm"
+              className="group relative bg-white rounded-2xl overflow-hidden border border-yellow-200 hover:border-yellow-400 transition-all duration-500 shadow-lg hover:shadow-xl"
             >
               {/* Status Badge */}
               <div className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-xs font-inter font-semibold ${
                 website.status === 'Live' 
-                  ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                  : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                  ? 'bg-green-100 text-green-700 border border-green-300'
+                  : 'bg-yellow-100 text-yellow-700 border border-yellow-300'
               }`}>
                 {website.status}
               </div>
 
               {/* Image/Preview Area */}
-              <div className="h-48 relative overflow-hidden bg-professional-dark">
+              <div className="h-48 relative overflow-hidden bg-gray-100">
                 <img 
                   src={website.image} 
                   alt={website.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-professional-dark to-transparent opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-50" />
                 
                 {/* Mock Browser Window */}
-                <div className="absolute top-3 left-3 right-3 bg-white/10 rounded-t-lg h-6 flex items-center px-3 backdrop-blur-sm">
+                <div className="absolute top-3 left-3 right-3 bg-white/90 rounded-t-lg h-6 flex items-center px-3">
                   <div className="flex space-x-2">
-                    <div className="w-3 h-3 bg-red-400/60 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400/60 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400/60 rounded-full"></div>
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                   </div>
                 </div>
                 
                 <div className="absolute bottom-4 left-4 z-20">
-                  <span className="bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-inter font-semibold border border-white/20">
+                  <span className="bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-sm font-inter font-semibold border border-gray-300">
                     {website.category}
                   </span>
                 </div>
@@ -226,10 +226,10 @@ const PortfolioShowcase: React.FC = () => {
               
               {/* Content */}
               <div className="p-6 relative z-20">
-                <h3 className="text-xl font-bold mb-3 font-poppins text-white group-hover:text-gradient transition-all duration-300">
+                <h3 className="text-xl font-bold mb-3 font-poppins text-gray-800 group-hover:text-yellow-600 transition-all duration-300">
                   {website.title}
                 </h3>
-                <p className="text-professional-gray mb-4 font-inter leading-relaxed">
+                <p className="text-gray-600 mb-4 font-inter leading-relaxed">
                   {website.description}
                 </p>
                 
@@ -238,13 +238,13 @@ const PortfolioShowcase: React.FC = () => {
                   {website.features.slice(0, 3).map((feature, featureIndex) => (
                     <span
                       key={featureIndex}
-                      className="px-2 py-1 bg-professional-blue/10 text-professional-light-blue rounded text-xs font-inter border border-professional-blue/20"
+                      className="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs font-inter border border-yellow-300"
                     >
                       {feature.split(' ')[0]}
                     </span>
                   ))}
                   {website.features.length > 3 && (
-                    <span className="px-2 py-1 bg-white/5 text-professional-gray rounded text-xs font-inter">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs font-inter">
                       +{website.features.length - 3} more
                     </span>
                   )}
@@ -256,7 +256,7 @@ const PortfolioShowcase: React.FC = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setSelectedWebsite(website)}
-                    className="flex items-center space-x-2 px-4 py-2 bg-professional-light-blue text-white rounded-lg font-inter font-semibold text-sm hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
+                    className="flex items-center space-x-2 px-4 py-2 bg-yellow-500 text-white rounded-lg font-inter font-semibold text-sm hover:bg-yellow-600 shadow-lg hover:shadow-yellow-500/30 transition-all duration-300"
                   >
                     <Eye className="w-4 h-4" />
                     <span>View Details</span>
@@ -266,23 +266,21 @@ const PortfolioShowcase: React.FC = () => {
                     href={website.liveUrl}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className="flex items-center space-x-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-professional-light-blue/20 transition-all duration-300 border border-white/10 hover:border-professional-light-blue/30"
+                    className="flex items-center space-x-2 px-4 py-2 bg-gray-100 rounded-lg hover:bg-yellow-500/20 transition-all duration-300 border border-gray-300 hover:border-yellow-400"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <ExternalLink className="w-4 h-4 text-professional-gray hover:text-white" />
-                    <span className="text-sm font-inter text-professional-gray hover:text-white">Visit Site</span>
+                    <ExternalLink className="w-4 h-4 text-gray-600 hover:text-yellow-600" />
+                    <span className="text-sm font-inter text-gray-600 hover:text-yellow-600">Visit Site</span>
                   </motion.a>
                 </div>
               </div>
 
               {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-professional-light-blue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-yellow-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
             </motion.div>
           ))}
         </motion.div>
-
-       
       </motion.div>
 
       {/* Website Modal */}

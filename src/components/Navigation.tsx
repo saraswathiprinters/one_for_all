@@ -25,7 +25,7 @@ const Navigation: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed w-full z-50 py-4 px-6 transition-all duration-300 ${
-        isScrolled ? 'bg-professional-navy/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-yellow-200' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
@@ -33,11 +33,11 @@ const Navigation: React.FC = () => {
           whileHover={{ scale: 1.05 }}
           className="flex items-center cursor-pointer"
         >
-          <div className="w-10 h-10 blue-gradient rounded-full mr-3 flex items-center justify-center">
+          <div className="w-10 h-10 bg-yellow-500 rounded-full mr-3 flex items-center justify-center">
             <Briefcase className="w-5 h-5 text-white" />
           </div>
-          <h1 className="text-xl font-bold font-poppins text-white">
-            Portfolio<span className="text-gradient">Pro</span>
+          <h1 className="text-xl font-bold font-poppins text-gray-800">
+            Chandraa<span className="text-yellow-600">Group</span>
           </h1>
         </motion.div>
 
@@ -52,8 +52,8 @@ const Navigation: React.FC = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, color: '#3B82F6' }}
-                className="text-professional-light hover:text-professional-light-blue transition-colors duration-300 font-inter font-medium flex items-center space-x-2"
+                whileHover={{ scale: 1.05, color: '#D97706' }}
+                className="text-gray-600 hover:text-yellow-600 transition-colors duration-300 font-inter font-medium flex items-center space-x-2"
               >
                 <Icon className="w-4 h-4" />
                 <span>{item.name}</span>
@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white z-50"
+          className="md:hidden text-gray-800 z-50"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -74,7 +74,7 @@ const Navigation: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, x: '100%' }}
           animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : '100%' }}
-          className="fixed top-0 right-0 h-full w-64 bg-professional-navy/95 backdrop-blur-md md:hidden flex flex-col justify-center items-center space-y-8"
+          className="fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md md:hidden flex flex-col justify-center items-center space-y-8 border-l border-yellow-200"
         >
           {navItems.map((item, index) => {
             const Icon = item.icon;
@@ -86,7 +86,7 @@ const Navigation: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-xl font-inter text-white hover:text-professional-light-blue transition-colors duration-300 flex items-center space-x-3"
+                className="text-xl font-inter text-gray-800 hover:text-yellow-600 transition-colors duration-300 flex items-center space-x-3"
               >
                 <Icon className="w-5 h-5" />
                 <span>{item.name}</span>
