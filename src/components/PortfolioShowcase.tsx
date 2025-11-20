@@ -12,7 +12,7 @@ import cityExpress from '../asstets/cityxpress.png';
 import sthreeFashion from '../asstets/sthree.png';
 import bananaExports from '../asstets/banana.png';
 import chandraSignage from '../asstets/singnate.png';
-
+import focusYellowPages from '../asstets/yellow.jpg';
 interface Website {
   id: number;
   title: string;
@@ -337,41 +337,58 @@ const PortfolioShowcase: React.FC = () => {
     "Business Contact Details",
     "Add Your Business Portal"
   ],
-  image: focusYellowPages, // make sure to import image
+  image: focusYellowPages, // make sure to import this image
   liveUrl: "http://focusyellowpages.com/",
   status: "Live",
   role: "Local Business Search Engine",
   additionalInfo: {
-    availableDistricts: [
+    services: [
+      "Business Listings",
+      "Premium Listings",
+      "Verified Badges",
+      "Advertising & Promotions",
+      "Analytics & Insights"
+    ],
+    industriesServed: [
+      "Retail",
+      "Healthcare",
+      "Education",
+      "Food & Beverages",
+      "Apparel & Accessories",
+      "Logistics",
+      "Events & Wedding Services",
+      "Printing & Stationeries"
+    ],
+    certifications: [],
+    markets: [
+      "Tamil Nadu",
       "Coimbatore",
       "Erode",
       "Ooty",
       "Pollachi"
     ],
-    topCategories: [
-      "Apparels & Accessories",
-      "Food & Beverages",
-      "Beauty & Wellness",
+    productCategories: [
+      "All Businesses",
+      "Restaurants",
+      "Healthcare",
+      "Retail",
+      "Automotive",
+      "Home Services",
+      "Professional Services",
       "Education",
-      "Health",
-      "Wedding & Events",
-      "Logistics Services",
-      "Printing & Stationaries"
+      "Entertainment"
     ],
-    featuredBusinesses: [
-      "Elite Men's Fashion",
-      "Bella Boutique"
-    ],
-    directoryStats: {
-      totalBusinesses: "28",
-      verifiedBusinesses: "27",
-      categories: "8",
-      avgRating: "4.5"
-    },
+    newsCategories: [],
     contact: {
-      phone: "8110001814",
       email: "yellowpagesindiateam@gmail.com",
+      phone: "8110001814",
       address: "India"
+    },
+    stats: {
+      brandRecallIncrease: "N/A",
+      satisfiedClients: "28+ businesses listed",
+      customerSatisfaction: "High",
+      countriesServed: "India"
     }
   }
 }
