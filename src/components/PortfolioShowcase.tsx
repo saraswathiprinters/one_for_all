@@ -320,7 +320,62 @@ const PortfolioShowcase: React.FC = () => {
         address: "Chennai, Tamil Nadu"
       }
     }
+  },
+  {
+  id: 10,
+  title: "Focus Yellow Pages",
+  description: "Tamil Nadu’s trusted local business directory for finding services, shops, and professionals",
+  longDescription: "Focus Yellow Pages is a comprehensive local business directory designed to help users discover trusted businesses, services, and professionals across Tamil Nadu. From apparels to healthcare, printing to logistics, and restaurants to home services, the platform offers seamless navigation, category filtering, district selection, business reviews, and premium listing features to boost visibility for local businesses.",
+  category: "Business Directory",
+  features: [
+    "Local Business Search",
+    "District-Based Listings",
+    "Customer Reviews",
+    "Verified Business Profiles",
+    "Featured & Premium Listings",
+    "Category-Based Filters",
+    "Business Contact Details",
+    "Add Your Business Portal"
+  ],
+  image: focusYellowPages, // make sure to import image
+  liveUrl: "http://focusyellowpages.com/",
+  status: "Live",
+  role: "Local Business Search Engine",
+  additionalInfo: {
+    availableDistricts: [
+      "Coimbatore",
+      "Erode",
+      "Ooty",
+      "Pollachi"
+    ],
+    topCategories: [
+      "Apparels & Accessories",
+      "Food & Beverages",
+      "Beauty & Wellness",
+      "Education",
+      "Health",
+      "Wedding & Events",
+      "Logistics Services",
+      "Printing & Stationaries"
+    ],
+    featuredBusinesses: [
+      "Elite Men's Fashion",
+      "Bella Boutique"
+    ],
+    directoryStats: {
+      totalBusinesses: "28",
+      verifiedBusinesses: "27",
+      categories: "8",
+      avgRating: "4.5"
+    },
+    contact: {
+      phone: "8110001814",
+      email: "yellowpagesindiateam@gmail.com",
+      address: "India"
+    }
   }
+}
+
 ];
 
   const containerVariants = {
